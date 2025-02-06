@@ -83,3 +83,38 @@ h5 {
 .smalltext {
   font-size: 12px;
 }
+.fullpage{
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top:0;
+  background-image: linear-gradient(#92B4FF,#fff);
+}
+.scrollbox{
+  overflow: scroll;
+}
+.databox{
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+.beet{
+  justify-content: space-between;
+}
+.p {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120ch;
+}
+.px{
+  text-align: right;
+ border-left: 1px dotted #00000038;
+ padding: 2px;
+}
+.vcc{
+  display: none;
+}
