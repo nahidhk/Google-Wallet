@@ -1,65 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-body{
-    margin: 0;
-    padding: 0;
-    font-family: "Space Grotesk", serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", serif;
 }
-h1,h2,h3,h4,h5{
-    margin: 0;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
-.nav{
-    background-color: #4680ff;
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
+
+.nav {
+  background-color: #4680ff;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }
-.fff{
-    color: #fff;
+
+.fff {
+  color: #fff;
 }
-.flex{
-    display: flex;
+
+.flex {
+  display: flex;
 }
-.anaround{
-    justify-content: space-around;
+
+.anaround {
+  justify-content: space-around;
 }
-.blanceBox{
-    background-color: #fbce04;
-    padding: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto;
-    width: auto;
-    border-radius: 100px;
-    box-shadow: 0 0 4px 0 #646363 inset;
-    color: #fff;
+
+.blanceBox {
+  background-color: #fbce04;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  width: auto;
+  border-radius: 100px;
+  box-shadow: 0 0 4px 0 #646363 inset;
+  color: #fff;
 }
-.grap{
-    flex-wrap: wrap;
+
+.grap {
+  flex-wrap: wrap;
 }
-.center{
+
+.center {
   justify-content: center;
 }
-.callBox{
+.acenter{
+  align-items: center;
+}
+.callBox {
   cursor: pointer;
   padding: 10px;
-    background-color: #EFEFEF;
-    width: 80px;
-    height: 80px;
-    margin: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 0 #000;
+  background-color: #EFEFEF;
+  width: 130px;
+  height: 130px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 #000;
 }
-.callBox:active{
+
+.callBox:active {
   filter: blur(10px);
   border-radius: 100px;
 }
-.iconImg{
-  height: 50px;
+
+.iconImg {
+  height: 70px;
 }
-.textcenter{
+
+.textcenter {
   text-align: center;
 }
-.smalltext{
+
+.smalltext {
   font-size: 12px;
 }
