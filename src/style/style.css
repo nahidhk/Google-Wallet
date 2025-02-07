@@ -141,3 +141,45 @@ h5 {
 .loadicon{
   font-size: 50px;
 }
+.input{
+  padding: 0;
+  height: 35px;
+  width: 300px;
+  background-color: #FFFFFF00;
+  outline: none;
+  border-bottom: 1px dotted #000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 12pt;
+}
+.input:focus{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 10px;
+  padding: 5px;
+}
+  
+.popup{
+  height: auto;
+  width: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.btn{
+  height: 40px;
+  width: auto;
+  background-color: #4680ff;
+  color: #fff;
+  border: 1px solid #4680ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.w100{
+  width: 100%;
+}
+.btn:hover{
+    font-family: "Space Grotesk", serif;
+  background-color: #4680FF00;
+  color: #000;
+}
