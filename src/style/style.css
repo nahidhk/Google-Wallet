@@ -87,7 +87,7 @@ h5 {
   height: 100vh;
   width: 100%;
   background-color: #fff;
-  position: fixed;
+  position: absolute;
   top:0;
   background-image: linear-gradient(#92B4FF,#fff);
 }
