@@ -195,3 +195,18 @@ h5 {
   border: 1px dotted #4680ff;
   border-radius: 2px;
 }
+table.unstyledTable {
+  border: 1px dashed #ddd;
+  border-collapse: collapse;
+
+}
+table.unstyledTable td, table.unstyledTable th {
+  border: 1px dashed #ddd;
+
+}
+table.unstyledTable thead {
+  background: #DDDDDD;
+}
+table.unstyledTable thead th {
+  font-weight: normal;
+}

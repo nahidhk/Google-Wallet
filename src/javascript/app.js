@@ -1,11 +1,21 @@
-fetch
+const jsonData = 
+{
+  "sheet": "https://docs.google.com/spreadsheets/d/1fiZzJ1IVEg6ebzMXyp8ZQZe9IiEizJVZXFNvY3xslA0/edit?usp=drivesdk",
+  "jsonApi": "https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
+  "submitFormUrl":"https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec"
+}
+;
+
+//https://script.google.com/macros/s/AKfycbyR0IB-kAE6d3f8gReM3kn-bFUqqdwcVqZDcAO9xxlpx-SwiRk-O3k3wQfQieTwDGOs/exec
 
 
-alert(jsonApi)
-const apiurl = jsonApi;
- const today = new Date().toISOString().split('T')[0];
- document.getElementById('autodate').value = today; 
- document.getElementById('autodate1').value = today; 
+
+
+
+const apiurl = jsonData.jsonApi;
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('autodate').value = today; 
+document.getElementById('autodate1').value = today; 
 
 async function displayData() {
   try {
@@ -19,10 +29,6 @@ async function displayData() {
 
     let totalCredit = 0;
     let totalDebit = 0;
-
-
-
-
 
     data.innerHTML = "";
     data.forEach((item) => {
@@ -63,5 +69,8 @@ async function displayData() {
 displayData();
 
 function sheets(){
-  window.location.href=sheet;
+  window.location.href=jsonData.sheet;
 }
+document.getElementById('sheets').value=jsonData.sheet;
+document.getElementById('apijsonlink').value=jsonData.jsonApi;
+

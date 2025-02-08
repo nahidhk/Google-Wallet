@@ -53,10 +53,16 @@
       <img class="iconImg" src="/src/img/datetodate.png">
       <span class="smalltext"><br />Date to Date</span>
     </div>
-    <div class="callBox textcenter">
+    <div onclick="callapp('apis')" class="callBox textcenter">
       <br />
       <img class="iconImg" src="/src/img/api.png">
       <span class="smalltext"><br />API's Setting</span>
+    </div>
+
+    <div onclick="callapp('tabel')" class="callBox textcenter">
+      <br />
+      <img class="iconImg" src="/src/img/table.png">
+      <span class="smalltext"><br />Total Table</span>
     </div>
 
   </section>
@@ -97,14 +103,14 @@
          <br /><br /><br /><br />
    <div class="popup">
 <h2 class="textcenter">Debit <hr /></h2>
-   <form action="" method="post">
+   <form action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
      <input class="input" required type="text" name="details" placeholder="Details"/>
      <br><br>
-     <input class="input" type="number" placeholder="Debit Amount" required/>
+     <input class="input" type="number" name="debit" placeholder="Debit Amount" required/>
      <br /><br />
-     <input id="autodate" class="input" type="date" />
+     <input id="autodate" class="input" type="date"  name="date"/>
      <br /><br />
-     <input class="f" readonly value="Debit" /> <br />
+     <input class="f" readonly value="Debit" name="type"/> <br />
      
      <div class="textcenter">
      <button class="btn w100" type="submit">Debit Now</button>  
@@ -121,14 +127,14 @@
          <br /><br /><br /><br />
    <div class="popup">
 <h2 class="textcenter">Credit<hr /></h2>
-   <form action="" method="post">
+   <form action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
      <input class="input" required type="text" name="details" placeholder="Details"/>
      <br><br>
-     <input class="input" type="number" placeholder="Credit Amount" required/>
+     <input class="input" type="number" name="credit" placeholder="Credit Amount" required/>
      <br /><br />
-     <input id="autodate1" class="input" type="date" />
+     <input id="autodate1" class="input" type="date" name="date"/>
      <br /><br />
-     <input class="f" readonly value="Credit" /> <br />
+     <input class="f" readonly value="Credit"  name="type"/> <br />
      
      <div class="textcenter">
      <button class="btn w100" type="submit">Credit Now</button>  
@@ -141,22 +147,50 @@
 
 <!-- The API's Setting --->
 
-<section class="fullpage">
+<section class="fullpage vcc" id="apis">
   <br /><br><br />
   <blockquote>
     <h3>API's Verify</h3>
     <hr />
-    <label for="apikey">Sheets Link</label>
+    <label for="apikey">Sheets Link</label><br>
     <input readonly class="inputx" type="text" id="sheets" placeholder='Not Input Sheet URL'/>
     <br>
+    <label for="apikey">Json Link by Google Apps Script</label><br>
+    <input readonly class="inputx" type="text" id="apijsonlink" placeholder='Not Input Apps Script URL'/>
   </blockquote>
 </section>
 
 
 
+<section class="fullpage center vcc" id="tabel">
+  <div>
+    <br><br><br><br>
+    <h1>Total Debit and Credit </h1>
+    <hr>
+    <table class="unstyledTable">
+      <thead>
+      <tr>
+      <th>head1</th>
+      <th>head2</th>
+      <th>head3</th>
+      <th>head4</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>cell1_1</td>
+      <td>cell2_1</td>
+      <td>cell3_1</td>
+      <td>cell4_1</td>
+      </tr>
+      </tbody>
+      </table>
+  </div>
+</section>
+
+
 <script src="/src/javascript/script.js"></script>
-<script src="/src/javascript/app.js"></script>
-<script src="/config/iconfig.js"></script>
+<script  src="/src/javascript/app.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
