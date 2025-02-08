@@ -11,9 +11,19 @@ function openapp(opentheapp){
 }
 
 
+
 function callapp(value){
     window.location.href=`?${value}`
 }
 function loadapp(valudata){
   document.getElementById('loadapp').style.display=valudata;
 }
+
+function debit(){
+  document.getElementById('debit').style.display='flex';
+}
+
+function credit(){
+  document.getElementById('credit').style.display='flex';
+}
+

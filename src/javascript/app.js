@@ -1,7 +1,11 @@
-const apiurl = 'https://script.google.com/macros/s/AKfycbyR0IB-kAE6d3f8gReM3kn-bFUqqdwcVqZDcAO9xxlpx-SwiRk-O3k3wQfQieTwDGOs/exec'
-// const today = new Date().toISOString().split('T')[0];
-// document.getElementById('autodate').value = today; 
-// document.getElementById('autodate1').value = today; 
+fetch
+
+
+alert(jsonApi)
+const apiurl = jsonApi;
+ const today = new Date().toISOString().split('T')[0];
+ document.getElementById('autodate').value = today; 
+ document.getElementById('autodate1').value = today; 
 
 async function displayData() {
   try {

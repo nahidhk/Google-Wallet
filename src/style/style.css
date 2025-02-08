@@ -161,7 +161,7 @@ h5 {
   
 .popup{
   height: auto;
-  width: auto;
+  width: 300px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -182,4 +182,16 @@ h5 {
     font-family: "Space Grotesk", serif;
   background-color: #4680FF00;
   color: #000;
+}
+.f{
+  height: 1px;
+  width: 1px;
+  border: none;
+  outline: none;
+}
+.inputx{
+  height: 20px;
+  width: 300px;
+  border: 1px dotted #4680ff;
+  border-radius: 2px;
 }
