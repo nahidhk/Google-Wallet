@@ -210,3 +210,18 @@ table.unstyledTable thead {
 table.unstyledTable thead th {
   font-weight: normal;
 }
+.login{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  z-index: 999;
+}
+.userimg{
+  padding: 3px;
+  height: 200px;
+  width: 200px;
+  border-radius:200px;
+  border: 3px solid #8000FF;
+}

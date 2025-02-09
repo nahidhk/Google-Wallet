@@ -2,7 +2,9 @@ const jsonData =
 {
   "sheet": "https://docs.google.com/spreadsheets/d/1fiZzJ1IVEg6ebzMXyp8ZQZe9IiEizJVZXFNvY3xslA0/edit?usp=drivesdk",
   "jsonApi": "https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
-  "submitFormUrl":"https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec"
+  "submitFormUrl":"https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
+  "number":"01877357091",
+  "password":"NAHID12345"
 }
 ;
 
@@ -74,3 +76,20 @@ function sheets(){
 document.getElementById('sheets').value=jsonData.sheet;
 document.getElementById('apijsonlink').value=jsonData.jsonApi;
 
+function login(){
+  document.getElementById('login').style.display='block';
+}
+
+
+ const username = document.getElementById('number').value=jsonData.number;
+
+function loginnow(){
+  const username = document.getElementById('number');
+  const password = document.getElementById('password');
+  if (password.value === jsonData.password) {
+    sessionStorage.setItem("logindata",true);
+    window.location.reload();
+  } else {
+   alert('Error Password!') ;
+  }
+}
