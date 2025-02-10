@@ -4,7 +4,9 @@ const jsonData =
   "jsonApi": "https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
   "submitFormUrl":"https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
   "number":"01877357091",
-  "password":"NAHID12345"
+  "password":"NAHID12345",
+  "name":"MD. Nahid",
+  "imgPath":"/nahid.jpg"
 }
 ;
 
@@ -44,7 +46,7 @@ async function displayData() {
           <div>
             <h2>${item.type}</h2>
             <p class="p"> ${item.details} </p>
-            <p class="p">${item.date}</p>
+            <p class="p">${new Date(item.date).toLocaleDateString("en-GB")}</p>
           </div>
           <div class="px">
             <br />
@@ -82,7 +84,8 @@ function login(){
 
 
  const username = document.getElementById('number').value=jsonData.number;
-
+document.getElementById('showName').innerHTML=jsonData.name;
+document.getElementById('showImg').src=jsonData.imgPath;
 function loginnow(){
   const username = document.getElementById('number');
   const password = document.getElementById('password');
