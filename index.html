@@ -101,7 +101,7 @@
          <br /><br /><br /><br />
    <div class="popup">
 <h2 class="textcenter">Debit <hr /></h2>
-   <form action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
+   <form onsubmit="loadapp('block')" method="post" action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec">
      <input class="input" required type="text" name="details" placeholder="Details"/>
      <br><br>
      <input class="input" type="number" name="debit" placeholder="Debit Amount" required/>
@@ -125,7 +125,7 @@
          <br /><br /><br /><br />
    <div class="popup">
 <h2 class="textcenter">Credit<hr /></h2>
-   <form action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
+   <form onsubmit="loadapp('block')" action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
      <input class="input" required type="text" name="details" placeholder="Details"/>
      <br><br>
      <input class="input" type="number" name="credit" placeholder="Credit Amount" required/>
@@ -135,7 +135,7 @@
      <input class="f" readonly value="Credit"  name="type"/> <br />
      
      <div class="textcenter">
-     <button class="btn w100" type="submit">Credit Now</button>  
+     <button onclick="clickbtn()" class="btn w100" type="button">Credit Now</button>  
      </div>
    </form>
    </div>
@@ -168,10 +168,10 @@
     <table class="unstyledTable">
       <thead>
       <tr>
-      <th>head1</th>
-      <th>head2</th>
-      <th>head3</th>
-      <th>head4</th>
+      <th>Date</th>
+      <th>Details</th>
+      <th>Debit</th>
+      <th>Credit</th>
       </tr>
       </thead>
       <tbody>

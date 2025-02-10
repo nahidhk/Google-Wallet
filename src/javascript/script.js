@@ -28,4 +28,8 @@ function apis() {
 function tabel() {
   document.getElementById('tabel').style.display = 'flex';
 }
-console.log("script")
+console.log("script");
+ 
+ function clickbtn(){
+   loadapp('block');
+ }

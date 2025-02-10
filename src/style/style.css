@@ -5,7 +5,10 @@ body {
   padding: 0;
   font-family: "Space Grotesk", serif;
 }
+input{
+    font-family: "Space Grotesk", serif;
 
+}
 h1,
 h2,
 h3,

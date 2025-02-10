@@ -2,7 +2,7 @@ const jsonData =
 {
   "sheet": "https://docs.google.com/spreadsheets/d/1fiZzJ1IVEg6ebzMXyp8ZQZe9IiEizJVZXFNvY3xslA0/edit?usp=drivesdk",
   "jsonApi": "https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
-  "submitFormUrl":"https://script.google.com/macros/s/AKfycbxs5eklxHQ-aRzwxaJzFcP9XE36Cr7NVt_6CCy8fU-8517xTjV7Qo9SsUO9_WT0Rp1v/exec",
+  "submitFormUrl":"Past The HTML Form",
   "number":"01877357091",
   "password":"NAHID12345",
   "name":"MD. Nahid",
@@ -95,4 +95,9 @@ function loginnow(){
   } else {
    alert('Error Password!') ;
   }
+}
+
+
+function reloadapp() {
+  window.location.reload();
 }
