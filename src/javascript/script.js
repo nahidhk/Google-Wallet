@@ -33,3 +33,7 @@ console.log("script");
  function clickbtn(){
    loadapp('block');
  }
+ 
+ function windowBack(){
+   window.location.history();
+ }
