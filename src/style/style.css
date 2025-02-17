@@ -5,10 +5,12 @@ body {
   padding: 0;
   font-family: "Space Grotesk", serif;
 }
-input{
-    font-family: "Space Grotesk", serif;
 
+input {
+  font-family: "Space Grotesk", serif;
+  
 }
+
 h1,
 h2,
 h3,
@@ -56,9 +58,11 @@ h5 {
 .center {
   justify-content: center;
 }
-.acenter{
+
+.acenter {
   align-items: center;
 }
+
 .callBox {
   cursor: pointer;
   padding: 10px;
@@ -86,65 +90,76 @@ h5 {
 .smalltext {
   font-size: 12px;
 }
-.fullpage{
+
+.fullpage {
   height: 100vh;
   width: 100%;
   background-color: #fff;
   position: absolute;
-  top:0;
-  background-image: linear-gradient(#92B4FF,#fff);
+  top: 0;
+  background-image: linear-gradient(#92B4FF, #fff);
 }
-.scrollbox{
+
+.scrollbox {
   overflow: scroll;
 }
-.databox{
+
+.databox {
   padding: 10px;
   border-bottom: 1px solid #000;
 }
-.beet{
+
+.beet {
   justify-content: space-between;
 }
+
 .p {
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 1; 
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 120ch;
 }
-.px{
+
+.px {
   text-align: right;
- border-left: 1px dotted #00000038;
- padding: 2px;
+  border-left: 1px dotted #00000038;
+  padding: 2px;
 }
-.vcc{
+
+.vcc {
   display: none;
 }
-.darkside{
+
+.darkside {
   position: fixed;
   top: 0;
   z-index: 999;
   background-color: #0000003B;
   height: 100vh;
   width: 100%;
-
+  
 }
-.load{
+
+.load {
   position: absolute;
   height: 50px;
   width: 80%;
   background-color: #fff;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    box-shadow: 0 0 30px 0 #000;
-    padding: 10px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 30px 0 #000;
+  padding: 10px;
 }
-.loadicon{
+
+.loadicon {
   font-size: 50px;
 }
-.input{
+
+.input {
   padding: 0;
   height: 35px;
   width: 300px;
@@ -156,20 +171,22 @@ h5 {
   border-right: none;
   font-size: 12pt;
 }
-.input:focus{
+
+.input:focus {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-radius: 10px;
   padding: 5px;
 }
-  
-.popup{
+
+.popup {
   height: auto;
   width: 300px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
 }
-.btn{
+
+.btn {
   height: 40px;
   width: auto;
   background-color: #4680ff;
@@ -178,42 +195,53 @@ h5 {
   border-radius: 10px;
   cursor: pointer;
 }
-.w100{
+
+.w100 {
   width: 100%;
 }
-.btn:hover{
-    font-family: "Space Grotesk", serif;
+
+.btn:hover {
+  font-family: "Space Grotesk", serif;
   background-color: #4680FF00;
   color: #000;
 }
-.f{
+
+.f {
   height: 1px;
   width: 1px;
   border: none;
   outline: none;
 }
-.inputx{
+
+.inputx {
   height: 20px;
   width: 300px;
   border: 1px dotted #4680ff;
   border-radius: 2px;
 }
+
 table.unstyledTable {
+  background-color: #fff;
   border: 1px dashed #ddd;
   border-collapse: collapse;
-
+  
 }
-table.unstyledTable td, table.unstyledTable th {
+
+table.unstyledTable td,
+table.unstyledTable th {
   border: 1px dashed #ddd;
-
+  padding: 4px;
 }
+
 table.unstyledTable thead {
   background: #DDDDDD;
 }
+
 table.unstyledTable thead th {
   font-weight: normal;
 }
-.login{
+
+.login {
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -221,10 +249,16 @@ table.unstyledTable thead th {
   top: 0;
   z-index: 999;
 }
-.userimg{
+
+.userimg {
   padding: 3px;
   height: 200px;
   width: 200px;
-  border-radius:200px;
+  border-radius: 200px;
   border: 3px solid #8000FF;
+}
+
+.btn:active {
+  background-color: #FF00AF;
+  box-shadow: 0 0 10px 0 #000;
 }

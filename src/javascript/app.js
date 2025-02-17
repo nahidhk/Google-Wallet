@@ -101,3 +101,4 @@ function loginnow(){
 function reloadapp() {
   window.location.reload();
 }
+
