@@ -58,7 +58,7 @@ console.log("script");
         !previousData.some((prevItem) => prevItem.username === item.username)
     );
 
-   // localStorage.setItem("previousData", JSON.stringify(data));
+    localStorage.setItem("previousData", JSON.stringify(data));
 
     const filteredData = data.filter(
       (item) =>
