@@ -113,15 +113,6 @@ h5 {
   justify-content: space-between;
 }
 
-.p {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 120ch;
-}
 
 .px {
   text-align: right;
@@ -224,6 +215,7 @@ table.unstyledTable {
   background-color: #fff;
   border: 1px dashed #ddd;
   border-collapse: collapse;
+  width: 100%;
   
 }
 
@@ -261,4 +253,10 @@ table.unstyledTable thead th {
 .btn:active {
   background-color: #FF00AF;
   box-shadow: 0 0 10px 0 #000;
+}
+.test{
+  background-color: red;
+}
+.right{
+  text-align: right;
 }

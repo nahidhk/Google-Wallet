@@ -28,30 +28,18 @@
   <br><br><br><br><br>
   <section class="flex center grap acenter">
 
-    <div onclick="callapp('debit')" class="callBox textcenter">
-      <br />
-      <img class="iconImg" src="/src/img/drebit.png">
-      <span class="smalltext"><br />Drebit</span>
-    </div>
+
     <div onclick="callapp('credit')" class="callBox textcenter">
       <br />
       <img class="iconImg" src="/src/img/credit.png">
       <span class="smalltext"><br />Credit</span>
     </div>
-    <div class="callBox textcenter" onclick="callapp('historyopen')">
-      <br />
-      <img class="iconImg" src="/src/img/history.png">
-      <span class="smalltext"><br />History</span>
-    </div>
-    <div onclick="sheets()" class="callBox textcenter">
-      <br />
-      <img class="iconImg" src="/src/img/sheets.png">
-      <span class="smalltext"><br />Sheets</span>
-    </div>
+
+    
     <div class="callBox textcenter">
       <br />
       <img class="iconImg" src="/src/img/datetodate.png">
-      <span class="smalltext"><br />Date to Date</span>
+      <span class="smalltext"><br />Montly</span>
     </div>
     <div onclick="callapp('apis')" class="callBox textcenter">
       <br />
@@ -59,10 +47,10 @@
       <span class="smalltext"><br />API's Setting</span>
     </div>
 
-    <div onclick="callapp('tabel')" class="callBox textcenter">
+    <div onclick="callapp('historyopen')" class="callBox textcenter">
       <br />
       <img class="iconImg" src="/src/img/table.png">
-      <span class="smalltext"><br />Total Table</span>
+      <span class="smalltext"><br />Data <Table></Table></span>
     </div>
 
   </section>
@@ -73,8 +61,19 @@
 <section id="history" class="fullpage vcc">
   <div >
     <br><br><br />
-    <div class="scrollbox" id="app">
-     
+    <div class="scrollbox">
+      <table class="unstyledTable">
+      <thead>
+      <tr>
+      <th>Date</th>
+      <th>Basic</th>
+      <th>Bonus & Sub</th>
+      </tr>
+      </thead>
+      <tbody id="app">
+       
+      </tbody>
+      </table>
     </div>
     </div>
 </section>
@@ -165,19 +164,7 @@
     <br><br><br><br>
     <h1>Total Debit and Credit </h1>
     <hr>
-    <table class="unstyledTable">
-      <thead>
-      <tr>
-      <th>Date</th>
-      <th>Details</th>
-      <th>Debit</th>
-      <th>Credit</th>
-      </tr>
-      </thead>
-      <tbody id="appk">
-        
-      </tbody>
-      </table>
+   
   </div>
 </section>
 
