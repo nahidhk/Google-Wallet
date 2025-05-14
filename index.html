@@ -36,7 +36,7 @@
     </div>
 
     
-    <div class="callBox textcenter">
+    <div onclick="callapp('summary')" class="callBox textcenter">
       <br />
       <img class="iconImg" src="/src/img/datetodate.png">
       <span class="smalltext"><br />Montly</span>
@@ -69,7 +69,13 @@
       <th>Basic</th>
       <th>Bonus & Sub</th>
       </tr>
+      <tr style="color: #fff;background-color: #000;">
+        <th>Total</th>
+        <th class="right" id="totalBasic"></th>
+        <th class="right" id="totalBonus"></th>
+      </tr>
       </thead>
+
       <tbody id="app">
        
       </tbody>
@@ -188,6 +194,30 @@
   </div>
 </section>
 
+
+
+<!-- monthly summary table -->
+<section id="summary" class="fullpage vcc">
+  <div>
+    <br><br><br />
+    <div class="scrollbox">
+      <table class="unstyledTable">
+      <thead>
+      <tr>
+      <th>Month</th>
+      <th>Bonus</th>
+      <th>Basic</th>
+      </tr>
+  
+      </thead>
+
+      <tbody id="summary-table">
+      <tr id="loading-row"><th colspan="3"><h1><i class="fa-solid fa-gear fa-spin"></i> Please wait...</h1></th></tr>
+      </tbody>
+      </table>
+    </div>
+    </div>
+</section>
 
 
 <script src="/src/javascript/script.js"></script>
