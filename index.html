@@ -100,28 +100,7 @@
   </div>
 </section>
 
-<!-- Form debit -->
-<section id="debit" class="fullpage flex center vcc">
-  <div>
-         <br /><br /><br /><br />
-   <div class="popup">
-<h2 class="textcenter">Debit <hr /></h2>
-   <form onsubmit="loadapp('block')" method="post" action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec">
-     <input class="input" required type="text" name="details" placeholder="Details"/>
-     <br><br>
-     <input class="input" type="number" name="debit" placeholder="Debit Amount" required/>
-     <br /><br />
-     <input id="autodate" class="input" type="date"  name="date"/>
-     <br /><br />
-     <input class="f" readonly value="Debit" name="type"/> <br />
-     
-     <div class="textcenter">
-     <button class="btn w100" type="submit">Debit Now</button>  
-     </div>
-   </form>
-   </div>
-  </div>
-</section>
+
 
 
 <!-- Form credit -->
@@ -129,20 +108,19 @@
   <div>
          <br /><br /><br /><br />
    <div class="popup">
-<h2 class="textcenter">Credit<hr /></h2>
-   <form onsubmit="loadapp('block')" action="https://script.google.com/macros/s/AKfycbyjUo_b9c4YfVq4eYVsBeEwdfNxNjg_0VEPpSNU7qkLaxIAsMJsgKgmI6UTwmBcitYu/exec" method="post">
-     <input class="input" required type="text" name="details" placeholder="Details"/>
-     <br><br>
-     <input class="input" type="number" name="credit" placeholder="Credit Amount" required/>
-     <br /><br />
-     <input id="autodate1" class="input" type="date" name="date"/>
-     <br /><br />
-     <input class="f" readonly value="Credit"  name="type"/> <br />
-     
-     <div class="textcenter">
-     <button class="btn w100" type="submit">Credit Now</button>  
-     </div>
-   </form>
+<h2 class="textcenter">Add Ammount<hr /></h2>
+  <form action="https://script.google.com/macros/s/AKfycbx5UjTn09gbyrWGMZaNqJN2XlNEeamC2kp-n_DdgwbPsTXoZx9VjCIx7tIFMLvcTvlO/exec" method="post">
+    <label for="basic"></label><br>
+    <input type="number" name="basic" id="basic" class="input" placeholder="Basic Amount" required>
+    <br />
+    <label for="bonus"></label><br>
+    <input type="number" name="bonus" id="bonus" class="input" placeholder="Bonus Amount" required>
+    <br />
+    <label for="date"></label><br>
+    <input id="autodate" type="date" name="date" id="date" class="input" required>
+    <br><br>
+    <button type="submit" class="btn w100">Submit</button>
+  </form>
    </div>
   </div>
 </section>
@@ -207,12 +185,13 @@
       <th>Month</th>
       <th>Bonus</th>
       <th>Basic</th>
+      <th>Total</th>
       </tr>
   
       </thead>
 
       <tbody id="summary-table">
-      <tr id="loading-row"><th colspan="3"><h1><i class="fa-solid fa-gear fa-spin"></i> Please wait...</h1></th></tr>
+      <tr id="loading-row"><th colspan="4"><h1><i class="fa-solid fa-gear fa-spin"></i> Please wait...</h1></th></tr>
       </tbody>
       </table>
     </div>

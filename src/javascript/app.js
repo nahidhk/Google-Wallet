@@ -20,7 +20,7 @@ const jsonData =
 const apiurl = jsonData.jsonApi;
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('autodate').value = today;
-document.getElementById('autodate1').value = today;
+
 
 function sheets() {
   window.location.href = jsonData.sheet;
@@ -76,18 +76,18 @@ async function displayData() {
 
     data.innerHTML = "";
     data.forEach((item) => {
-      totalDebit += parseFloat(item.Basic) || 0;
-      totalCredit += parseFloat(item.Bonus) || 0;
+      totalDebit += parseFloat(item.basic) || 0;
+      totalCredit += parseFloat(item.bonus) || 0;
 
       const itemElement = document.createElement("tr");
       itemElement.innerHTML = `
-  <td>${new Date(item.Date).toLocaleDateString("en-US", {
+  <td>${new Date(item.date).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric"
       })}</td>
-  <td class="right">${item.Basic.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
-  <td class="right">${item.Bonus.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
+  <td class="right">${item.basic.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
+  <td class="right">${item.bonus.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
 `
         ;
       dataContainer.prepend(itemElement);
@@ -122,13 +122,13 @@ async function loadData() {
   const monthlyData = {};
 
   data.forEach(entry => {
-    if (!entry.Date) return;
+    if (!entry.date) return;
 
-    const date = new Date(entry.Date);
+    const date = new Date(entry.date);
     const monthKey = date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0');
 
-    const basic = parseFloat(entry.Basic) || 0;
-    const bonus = parseFloat(entry.Bonus) || 0;
+    const basic = parseFloat(entry.basic) || 0;
+    const bonus = parseFloat(entry.bonus) || 0;
 
     if (!monthlyData[monthKey]) {
       monthlyData[monthKey] = { bonus: 0, basic: 0 };
@@ -148,6 +148,7 @@ async function loadData() {
     })}</td>
           <td class="right">${values.bonus.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
           <td class="right">${values.basic.toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
+          <td class="right">${(values.bonus + values.basic).toLocaleString('en-US', { minimumFractionDigits: 2 })}</td>
         `;
     tbody.prepend(tr);
     document.getElementById('loading-row').style.display = 'none';
@@ -155,3 +156,7 @@ async function loadData() {
 }
 
 loadData();
+
+
+//  the form submit
+ 
