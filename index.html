@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+   <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="/src/img/ewallet.png" type="image/x-icon">
   <link rel="stylesheet" href="/src/style/style.css">
   <meta name="theme-color" content="#4680ff" />
@@ -41,11 +42,7 @@
       <img class="iconImg" src="/src/img/datetodate.png">
       <span class="smalltext"><br />Montly</span>
     </div>
-    <div onclick="callapp('apis')" class="callBox textcenter">
-      <br />
-      <img class="iconImg" src="/src/img/api.png">
-      <span class="smalltext"><br />API's Setting</span>
-    </div>
+    
 
     <div onclick="callapp('historyopen')" class="callBox textcenter">
       <br />
@@ -126,20 +123,6 @@
 </section>
 
 
-<!-- The API's Setting --->
-
-<section class="fullpage vcc" id="apis">
-  <br /><br><br />
-  <blockquote>
-    <h3>API's Verify</h3>
-    <hr />
-    <label for="apikey">Sheets Link</label><br>
-    <input readonly class="inputx" type="text" id="sheets" placeholder='Not Input Sheet URL'/>
-    <br>
-    <label for="apikey">Json Link by Google Apps Script</label><br>
-    <input readonly class="inputx" type="text" id="apijsonlink" placeholder='Not Input Apps Script URL'/>
-  </blockquote>
-</section>
 
 
 
@@ -198,6 +181,11 @@
     </div>
 </section>
 
+
+
+<center>
+  <span id="dateis"></span>
+</center>
 
 <script src="/src/javascript/script.js"></script>
 <script  src="/src/javascript/app.js"></script>

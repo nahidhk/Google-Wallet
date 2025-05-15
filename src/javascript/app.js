@@ -17,6 +17,27 @@ const jsonData =
 
 
 
+const datein = new Date().toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+const mytime= new Date().toLocaleTimeString("en-US", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit"
+});
+setInterval(() => {
+  document.getElementById("time").innerHTML = new Date().toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+}
+  , 1000);
+
+  document.getElementById("dateis").innerHTML ="<br><br>" + datein + " " + mytime;
+
 const apiurl = jsonData.jsonApi;
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('autodate').value = today;
@@ -25,8 +46,6 @@ document.getElementById('autodate').value = today;
 function sheets() {
   window.location.href = jsonData.sheet;
 }
-document.getElementById('sheets').value = jsonData.sheet;
-document.getElementById('apijsonlink').value = jsonData.jsonApi;
 
 function login() {
   document.getElementById('login').style.display = 'block';

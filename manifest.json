@@ -1,0 +1,15 @@
+{
+    "name": "My Wallet",
+    "short_name": "My Wallet",
+    "icons": [
+      {
+        "src": "src/img/ewallet.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#fff"
+  }
