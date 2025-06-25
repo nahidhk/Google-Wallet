@@ -43,5 +43,7 @@ console.log("script");
  }
  
  
-
+function outcall(){
+  window.location.href="https://docs.google.com/spreadsheets/d/12v3_FtNMrilVt64NozwEFflHwdsVF0QDhK0BX_f_txE/edit?usp=drivesdk"
+}
  
