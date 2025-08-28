@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       btnloop:[
-        { icon:'/src/assets/svg/credit.png', label: 'Credit', route:'/credit' },
-        { icon:'/src/assets/svg/history.png', label: 'History', route:'/history' },
-        { icon:'/src/assets/svg/datetodate.png', label: 'Monthly', route:'/monthly' },
-        { icon:'/src/assets/svg/sheet.png', label: 'G-Sheet', route:'/gsheet' }
+        { icon:'./src/assets/svg/credit.png', label: 'Credit', route:'/credit' },
+        { icon:'./src/assets/svg/history.png', label: 'History', route:'/history' },
+        { icon:'./src/assets/svg/datetodate.png', label: 'Monthly', route:'/monthly' },
+        { icon:'./src/assets/svg/sheet.png', label: 'G-Sheet', route:'/gsheet' }
       ]
     }
   },
