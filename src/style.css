@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", serif;
+}
+
+input {
+  font-family: "Space Grotesk", serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+.nav {
+  background-color: #4680ff;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  padding: 10px;
+}
+
+.fff {
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.blanceBox {
+  background-color: #fbce04;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  width: auto;
+  border-radius: 100px;
+  box-shadow: 0 0 4px 0 #646363 inset;
+  color: #fff;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* element এর মধ্যে space */
+}
+
+.btnbox {
+  height: 90px;
+  width: 90px;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btnbox:hover {
+  box-shadow: rgba(2, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.icon {
+  height: 40px;
+  margin-bottom: 5px;
+}

@@ -1,24 +1,15 @@
 <template>
-  <div>
-    <Nav /> <!-- Nav component use করা হলো -->
-    <h1>Main App Content</h1>
+  <div id="app">
+    <Nav />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Nav from './components/Nav.vue'  // Import করা হলো
+import Nav from './components/Nav.vue'
 
 export default {
   name: 'App',
-  components: {
-    Nav  // Declare করা হলো
-  }
+  components: { Nav }
 }
 </script>
-
-<style>
-/* Optional global styles */
-</style>
-
-
-
