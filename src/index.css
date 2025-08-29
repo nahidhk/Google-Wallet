@@ -63,8 +63,8 @@
   border-radius: 100px;
 }
 .input{
-  height: 30px;
-  width: 80%;
+  height: 40px;
+  width: 90%;
   margin-top: 10px;
   border: 1px solid #4680ff;
   border-radius: 3px;
@@ -75,7 +75,7 @@
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 .btn{
-  height: 35px;
+  height: 40px;
   width: 40%;
   margin-top: 20px;
   border: none;
