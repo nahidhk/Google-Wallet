@@ -114,3 +114,21 @@ box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
   height: 40px;
   width: 40px;  
 }
+table.unstyledTable {
+  height: 100%;
+  width: 100%;
+    border-collapse: collapse;
+}
+table.unstyledTable td, table.unstyledTable th {
+  border: 1px solid #AAAAAA;
+}
+table.unstyledTable tbody td {
+  font-size: 14px;
+}
+table.unstyledTable thead {
+  background: #DDDDDD;
+}
+table.unstyledTable thead th {
+  font-weight: normal;
+  text-align: center;
+}
