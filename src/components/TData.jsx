@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import googleURL from "../data/googleURL.json";
+import Loading from "./Loading"
 
 function TData() {
     const [users, setUsers] = useState([]);   
@@ -19,7 +20,7 @@ function TData() {
     }, []);
 
     if (loading) {
-        return <h3>⏳ Loading...</h3>;
+        return <Loading />;
     }
 
 
@@ -30,7 +31,7 @@ function TData() {
                     <tr>
                         <th>Date</th>
                         <th>Basic</th>
-                        <th>Bonus</th>
+                        <th>Over</th>
                         <th>Total </th>
                     </tr>
                     <tr>
