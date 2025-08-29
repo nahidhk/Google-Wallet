@@ -9,12 +9,13 @@
 }
 
 .nav {
+  height: auto;
   background-color: #4680ff;
-  padding: 10px;
+  padding: 20px;
   width: 100%;
   position: fixed;
   z-index: 100;
-   top: 0; 
+  top: 0;
 }
 
 .fff {
@@ -41,14 +42,15 @@
   color: #fff;
 }
 
-.darkbox{
+.darkbox {
   background-color: #0000003b;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.loginBox{
+
+.loginBox {
   height: auto;
   width: 80%;
   background-color: #fff;
@@ -57,12 +59,14 @@
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.loginImage{
+
+.loginImage {
   height: 150px;
   width: 150px;
   border-radius: 100px;
 }
-.input{
+
+.input {
   height: 40px;
   width: 90%;
   margin-top: 10px;
@@ -71,10 +75,12 @@
   padding: 5px;
   outline: none;
 }
-.input:focus{
+
+.input:focus {
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
-.btn{
+
+.btn {
   height: 40px;
   width: 40%;
   margin-top: 20px;
@@ -84,14 +90,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
   background-color: #315edc;
 }
-.center{
+
+.center {
   align-items: center;
   justify-content: center;
 }
-.menubtn{
+
+.menubtn {
   height: 100px;
   width: 100px;
   background-color: #eee;
@@ -104,31 +113,51 @@
   align-items: center;
   flex-direction: column;
 }
-.menubtn:hover{
-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+
+.menubtn:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
-.wrap{
+
+.wrap {
   flex-wrap: wrap;
 }
-.icon{
+
+.icon {
   height: 40px;
-  width: 40px;  
+  width: 40px;
 }
+
 table.unstyledTable {
   height: 100%;
-  width: 100%;
-    border-collapse: collapse;
+  width: 95%;
+  border-collapse: collapse;
 }
-table.unstyledTable td, table.unstyledTable th {
+
+table.unstyledTable td,
+table.unstyledTable th {
   border: 1px solid #AAAAAA;
 }
+
 table.unstyledTable tbody td {
   font-size: 14px;
 }
+
 table.unstyledTable thead {
   background: #DDDDDD;
 }
+
 table.unstyledTable thead th {
   font-weight: normal;
   text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.textcenter {
+  text-align: center;
+}
+th,td{
+  padding: 10px;
 }
