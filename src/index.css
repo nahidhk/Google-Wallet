@@ -129,12 +129,13 @@
 }
 
 .unstyledTable {
-  width: 500px;          
-  min-width: 500px;    
+  width: 80%;
   border-collapse: collapse;
 }
-.unstyledTable td, .unstyledTable th {
-  white-space: nowrap; 
+
+.unstyledTable td,
+.unstyledTable th {
+  white-space: nowrap;
 }
 
 
@@ -163,33 +164,38 @@ table.unstyledTable thead th {
 .textcenter {
   text-align: center;
 }
-th,td{
+
+th,
+td {
   padding: 10px;
 }
+
 .scroll {
-  overflow-x: auto;       /* শুধু horizontal scroll */
-  overflow-y: hidden;     /* vertical scroll না দেখাতে */
-  -webkit-overflow-scrolling: touch; /* mobile smooth scroll */
+  overflow: scroll;
+  padding: 10px;
 }
 
 
 
 .loader {
-  --d:22px;
+  --d: 22px;
   width: 4px;
   height: 4px;
   border-radius: 50%;
   color: #fdfdfd;
-  box-shadow: 
-    calc(1*var(--d))      calc(0*var(--d))     0 0,
-    calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
-    calc(0*var(--d))      calc(1*var(--d))     0 2px,
+  box-shadow:
+    calc(1*var(--d)) calc(0*var(--d)) 0 0,
+    calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
+    calc(0*var(--d)) calc(1*var(--d)) 0 2px,
     calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
-    calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+    calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
     calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
-    calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+    calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
   animation: l27 1s infinite steps(8);
 }
+
 @keyframes l27 {
-  100% {transform: rotate(1turn)}
+  100% {
+    transform: rotate(1turn)
+  }
 }

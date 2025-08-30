@@ -15,9 +15,11 @@ function TotalBalance() {
     return <i className="fa-solid fa-arrow-rotate-right fa-spin"></i>; // 
   }
 
-  const totalBasic = data.reduce((sum, item) => sum + (Number(item.basic) || 0), 0);
-  const totalBouns = data.reduce((sum, item) => sum + (Number(item.bonus) || 0), 0);
-  const totalMyBalance = totalBouns + totalBasic;
+  // const totalBasic = data.reduce((sum, item) => sum + (Number(item.basic) || 0), 0);
+  // const totalBouns = data.reduce((sum, item) => sum + (Number(item.bonus) || 0), 0);
+  const totalcredit = data.reduce((sum, item) => sum + (Number(item.credit) || 0), 0);
+   const totaldebit = data.reduce((sum, item) => sum + (Number(item.debit) || 0), 0);
+  const totalMyBalance = totalcredit - totaldebit;
 
   return <span>{totalMyBalance.toLocaleString("en-US")}</span>;
 }

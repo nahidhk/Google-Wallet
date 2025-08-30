@@ -25,54 +25,64 @@ function TData() {
 
 
     return (
-        <div className="center flex scroll">
-            <table className="unstyledTable">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Basic</th>
-                        <th>Over</th>
-                        <th>Debit</th>
-                        <th>Cost</th>
-                        <th>Credit</th>
-                    </tr>
-                    <tr>
-                        <th>Total</th>
-                        <th>
-                            {
-                                users.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString('en-US')
-                            }
-                        </th>
-                        <th>
-                            {
-                                users.reduce((sum, item) => sum + (Number(item.bonus) || 0), 0).toLocaleString('en-Us')
-                            }
-                        </th>
-                        <th></th>
-                        <th></th>
-                        <th><a href="#">View</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {[...users].reverse().map((user, index) => (
-                        <tr key={index}>
-                            <td className="textcenter">
-                                {new Date(user.date).toLocaleDateString("en-US", { weekday: "short" })},{" "}
-                                {new Date(user.date).getDate()},{" "}
-                                {new Date(user.date).toLocaleDateString("en-US", { month: "short" })},{" "}
-                                {new Date(user.date).toLocaleDateString("en-US", { year: "2-digit" })}
-                            </td>
-
-                            <td className="right">{user.basic.toLocaleString("en-US") || "0"}</td>
-                            <td className="right">{user.bonus.toLocaleString("en-US") || "0"}</td>
-                            <td className="right">{user.debit.toLocaleString("en-US") || "0"}</td>
-                            <td className="right">{(user.basic + user.bonus + user.debit - user.credit).toLocaleString("en-US") || "0"}</td>
-                            <td className="right"> {user.credit.toLocaleString("en-US") || "0"}</td>
+        <div className="center flex">
+            <div className="scroll">
+                <table className="unstyledTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Basic</th>
+                            <th>Over</th>
+                            <th>Debit</th>
+                            <th>Cost</th>
+                            <th>Credit</th>
                         </tr>
-                    ))}
+                        <tr>
+                            <th>Total</th>
+                            <th>
+                                {
+                                    users.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString('en-US')
+                                }
+                            </th>
+                            <th>
+                                {
+                                    users.reduce((sum, item) => sum + (Number(item.bonus) || 0), 0).toLocaleString('en-Us')
+                                }
+                            </th>
+                            <th>
+                                  {
+                                    users.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString('en-Us')
+                                }
+                            </th>
+                            <th>
+                                  {
+                                   users.reduce((sum, item) => sum + (Number(item.bonus + item.basic + item.debit - item.credit) || 0), 0).toLocaleString('en-Us')
+                                }
+                            </th>
+                            <th><a href="#">View</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {[...users].reverse().map((user, index) => (
+                            <tr key={index}>
+                                <td className="textcenter">
+                                    {new Date(user.date).toLocaleDateString("en-US", { weekday: "short" })},{" "}
+                                    {new Date(user.date).getDate()},{" "}
+                                    {new Date(user.date).toLocaleDateString("en-US", { month: "short" })},{" "}
+                                    {new Date(user.date).toLocaleDateString("en-US", { year: "2-digit" })}
+                                </td>
 
-                </tbody>
-            </table>
+                                <td className="right">{user.basic.toLocaleString("en-US") || "0"}</td>
+                                <td className="right">{user.bonus.toLocaleString("en-US") || "0"}</td>
+                                <td className="right">{user.debit.toLocaleString("en-US") || "0"}</td>
+                                <td className="right">{(user.basic + user.bonus + user.debit - user.credit).toLocaleString("en-US") || "0"}</td>
+                                <td className="right"> {user.credit.toLocaleString("en-US") || "0"}</td>
+                            </tr>
+                        ))}
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

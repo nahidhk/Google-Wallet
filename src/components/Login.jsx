@@ -7,7 +7,7 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === googleURL[0].email && password === googleURL[0].p) {
+    if (email === googleURL[1].email && password === googleURL[1].p) {
        sessionStorage.setItem("ucCode0x", "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0");
          window.location.reload();
     } else {
@@ -18,7 +18,7 @@ function Login() {
   return (
     <div className="darkbox">
       <div className="loginBox">
-        <img className="loginImage" src={googleURL[0].userImg} alt="Login" />
+        <img className="loginImage" src={googleURL[1].userImg} alt="Login" />
         <form onSubmit={handleLogin}>
           <input
             className="input"

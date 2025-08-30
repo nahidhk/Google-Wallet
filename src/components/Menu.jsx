@@ -2,6 +2,7 @@ import react from "react";
 import sheetsImg from "../assets/sheets.png";
 import tableImg from "../assets/table.png";
 import { useNavigate } from "react-router-dom";
+import googleURL from "../data/googleURL.json"
 
 function Menu() {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ function Menu() {
                 </div>
 
 
-                <div className="menubtn">
+                <div className="menubtn" onClick={() => window.location.href = googleURL[2].googleSheetsUrl}>
                     <img className="icon" src={sheetsImg} alt="img" />
                     <span>
                         G-Sheets

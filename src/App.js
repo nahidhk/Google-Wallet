@@ -5,7 +5,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Menu from "./components/Menu";
-import TData from "./components/TData";   // নতুন পেজ
+import TData from "./components/TData";   
+
 
 function App() {
   const logid = "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0";
@@ -26,6 +27,7 @@ function App() {
 
           
           <Route path="/TData" element={<TData />} />
+         
         </Routes>
       </Router>
     );
