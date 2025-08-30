@@ -3,11 +3,11 @@ import googleURL from "../data/googleURL.json";
 import Loading from "./Loading"
 
 function TData() {
-    const [users, setUsers] = useState([]);   
-    const [loading, setLoading] = useState(true); 
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(googleURL[0].JsonViewAPi) 
+        fetch(googleURL[0].JsonViewAPi)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data);
@@ -25,14 +25,16 @@ function TData() {
 
 
     return (
-        <div className="center flex">
+        <div className="center flex scroll">
             <table className="unstyledTable">
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Basic</th>
                         <th>Over</th>
-                        <th>Total </th>
+                        <th>Debit</th>
+                        <th>Cost</th>
+                        <th>Credit</th>
                     </tr>
                     <tr>
                         <th>Total</th>
@@ -46,6 +48,8 @@ function TData() {
                                 users.reduce((sum, item) => sum + (Number(item.bonus) || 0), 0).toLocaleString('en-Us')
                             }
                         </th>
+                        <th></th>
+                        <th></th>
                         <th><a href="#">View</a></th>
                     </tr>
                 </thead>
@@ -59,9 +63,11 @@ function TData() {
                                 {new Date(user.date).toLocaleDateString("en-US", { year: "2-digit" })}
                             </td>
 
-                            <td className="right">{user.basic.toLocaleString("en-US")}</td>
-                            <td className="right">{user.bonus.toLocaleString("en-US")}</td>
-                            <td className="right">{(user.basic + user.bonus).toLocaleString("en-US")}</td>
+                            <td className="right">{user.basic.toLocaleString("en-US") || "0"}</td>
+                            <td className="right">{user.bonus.toLocaleString("en-US") || "0"}</td>
+                            <td className="right">{user.debit.toLocaleString("en-US") || "0"}</td>
+                            <td className="right">{(user.basic + user.bonus + user.debit - user.credit).toLocaleString("en-US") || "0"}</td>
+                            <td className="right"> {user.credit.toLocaleString("en-US") || "0"}</td>
                         </tr>
                     ))}
 

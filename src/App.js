@@ -14,17 +14,17 @@ function App() {
   if (giveID === logid) {
     return (
       <Router>
-        <Nav />
+          <Nav />
         <br />
         <br />
         <br />
         <br />
 
         <Routes>
-          {/* ডিফল্টে Menu দেখাবে */}
+        
           <Route path="/" element={<Menu />} />
 
-          {/* Total Data পেজ */}
+          
           <Route path="/TData" element={<TData />} />
         </Routes>
       </Router>

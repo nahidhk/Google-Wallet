@@ -8,6 +8,7 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
+
 .nav {
   height: auto;
   background-color: #4680ff;
@@ -127,11 +128,15 @@
   width: 40px;
 }
 
-table.unstyledTable {
-  height: 100%;
-  width: 95%;
+.unstyledTable {
+  width: 500px;          
+  min-width: 500px;    
   border-collapse: collapse;
 }
+.unstyledTable td, .unstyledTable th {
+  white-space: nowrap; 
+}
+
 
 table.unstyledTable td,
 table.unstyledTable th {
@@ -161,7 +166,11 @@ table.unstyledTable thead th {
 th,td{
   padding: 10px;
 }
-
+.scroll {
+  overflow-x: auto;       /* শুধু horizontal scroll */
+  overflow-y: hidden;     /* vertical scroll না দেখাতে */
+  -webkit-overflow-scrolling: touch; /* mobile smooth scroll */
+}
 
 
 
