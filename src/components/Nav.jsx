@@ -1,5 +1,5 @@
 import React from "react";
-import TotalBlance  from "./TotalBlance";
+import TotalBlance from "./TotalBlance";
 
 function Nav() {
     return (
@@ -9,13 +9,14 @@ function Nav() {
                     Google Wallet
                 </h3>
 
-                <div className="blanceBox">
-                    <i className="fa-solid fa-bangladeshi-taka-sign"></i>
-                    <span>
-                        <TotalBlance/>
-                    </span>
-                    TK
-                </div>
+                
+                    <div className="blanceBox">
+                        <i className="fa-solid fa-bangladeshi-taka-sign"></i>
+                        <span>
+                            <TotalBlance />
+                        </span>
+                        TK
+                    </div>
             </blockquote>
         </div>
     );

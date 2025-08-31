@@ -53,7 +53,7 @@
 
 .loginBox {
   height: auto;
-  width: 80%;
+  width: 300px;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -198,4 +198,21 @@ td {
   100% {
     transform: rotate(1turn)
   }
+}
+.messege{
+  height: auto;
+  position: fixed;
+  top: 20%;
+  z-index: 999;
+  background-color: #fffdfd70;
+  width: 90%;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  padding: 20px;
+  border: 3px dotted rgb(255, 0, 132);
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  border-radius: 5px;
+  color: #000000;
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

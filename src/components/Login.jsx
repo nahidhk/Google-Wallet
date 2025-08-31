@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import googleURL from "../data/googleURL.json";
+import Messege from "./Messege";
 
 function Login() {
-  const [email, setEmail] = useState(googleURL[0].email);
+  const [email, setEmail] = useState(googleURL[1].email);
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(""); // error message state
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === googleURL[1].email && password === googleURL[1].p) {
-       sessionStorage.setItem("ucCode0x", "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0");
-         window.location.reload();
+      sessionStorage.setItem(
+        "ucCode0x",
+        "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0"
+      );
+      window.location.reload();
     } else {
       alert("Login failed!");
     }
@@ -25,6 +30,7 @@ function Login() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Sorry! You are not config "
           />
           <input
             className="input"
@@ -35,6 +41,8 @@ function Login() {
           />
           <button type="submit" className="btn">Login</button>
         </form>
+
+  
       </div>
     </div>
   );

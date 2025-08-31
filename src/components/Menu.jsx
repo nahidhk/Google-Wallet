@@ -1,11 +1,17 @@
 import react from "react";
 import sheetsImg from "../assets/sheets.png";
 import tableImg from "../assets/table.png";
+import logoutImg from "../assets/logout.png";
 import { useNavigate } from "react-router-dom";
 import googleURL from "../data/googleURL.json"
 
+
 function Menu() {
     const navigate = useNavigate();
+    function logout(){
+        sessionStorage.clear();
+        window.location.reload();
+    }
     return (
         <div>
             <div className="flex center wrap">
@@ -14,7 +20,7 @@ function Menu() {
                 <div className="menubtn" onClick={() => navigate("/TData")}>
                     <img className="icon" src={tableImg} alt="img" />
                     <span>
-                       Total Data 
+                        Total Data
                     </span>
                 </div>
 
@@ -23,6 +29,14 @@ function Menu() {
                     <img className="icon" src={sheetsImg} alt="img" />
                     <span>
                         G-Sheets
+                    </span>
+                </div>
+
+
+                <div className="menubtn" onClick={() => logout()}>
+                    <img className="icon" src={logoutImg} alt="img" />
+                    <span>
+                       Logout
                     </span>
                 </div>
 
