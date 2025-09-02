@@ -216,3 +216,17 @@ td {
   color: #000000;
 box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+
+.naviton{
+  height: auto;
+  width: 100%;
+  background-color: rgba(212, 212, 212, 0.375);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 9px; 
+}
+.pointer{
+  cursor: pointer;
+}

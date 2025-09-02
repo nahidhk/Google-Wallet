@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Menu from "./components/Menu";
 import TData from "./components/TData";   
+import NavitonBtn from "./components/NavitonBtn";
 
 
 function App() {
@@ -20,15 +21,11 @@ function App() {
         <br />
         <br />
         <br />
-
-        <Routes>
-        
-          <Route path="/" element={<Menu />} />
-
-          
-          <Route path="/TData" element={<TData />} />
-         
+        <Routes>       
+          <Route path="/" element={<Menu />} />          
+          <Route path="/TData" element={<TData />} />         
         </Routes>
+        <NavitonBtn />
       </Router>
     );
   } else {

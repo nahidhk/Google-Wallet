@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import googleURL from "../data/googleURL.json";
-import Messege from "./Messege";
+
 
 function Login() {
-  const [email, setEmail] = useState(googleURL[1].email);
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState(""); // error message state
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === googleURL[1].email && password === googleURL[1].p) {
+    if (password === googleURL[1].p) {
       sessionStorage.setItem(
         "ucCode0x",
         "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0"
@@ -25,14 +23,9 @@ function Login() {
       <div className="loginBox">
         <img className="loginImage" src={googleURL[1].userImg} alt="Login" />
         <form onSubmit={handleLogin}>
+          <h3>Login here</h3>
           <input
-            className="input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Sorry! You are not config "
-          />
-          <input
+            autoComplete="none"
             className="input"
             type="password"
             placeholder="Password"
@@ -42,7 +35,7 @@ function Login() {
           <button type="submit" className="btn">Login</button>
         </form>
 
-  
+
       </div>
     </div>
   );
