@@ -21,6 +21,7 @@
 
 .fff {
   color: #fff;
+  cursor: pointer;
 }
 
 .flex {
@@ -218,15 +219,41 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .naviton{
-  height: auto;
+  height: 50px;
   width: 100%;
   background-color: rgba(212, 212, 212, 0.375);
   position: fixed;
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  padding: 9px; 
+  align-items: center; 
+  backdrop-filter: blur(1px);
 }
 .pointer{
   cursor: pointer;
 }
+.iconx{
+  font-size: 20px;
+  color: #282828e4;
+}
+.iconx:hover{
+  color: #000;
+}
+
+
+@media (min-width: 768px){
+  .nav{
+    width: 400px;
+  }
+  #root{
+    width: 400px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+  }
+}
+

@@ -5,7 +5,7 @@ function Nav() {
     return (
         <div className="nav">
             <blockquote className="flex around">
-                <h3 className="mrgin5px fff">
+                <h3  className="fff" onClick={()=> window.location.href="/" }>
                     Google Wallet
                 </h3>
 
