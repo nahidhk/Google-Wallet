@@ -124,6 +124,14 @@
   flex-wrap: wrap;
 }
 
+.colum {
+  flex-direction: column;
+}
+
+.recolum {
+  flex-direction: column-reverse;
+}
+
 .icon {
   height: 40px;
   width: 40px;
@@ -200,7 +208,8 @@ td {
     transform: rotate(1turn)
   }
 }
-.messege{
+
+.messege {
   height: auto;
   position: fixed;
   top: 20%;
@@ -212,13 +221,13 @@ td {
   padding: 20px;
   border: 3px dotted rgb(255, 0, 132);
   left: 50%;
-  transform: translate(-50% ,-50%);
+  transform: translate(-50%, -50%);
   border-radius: 5px;
   color: #000000;
-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.naviton{
+.naviton {
   height: 50px;
   width: 100%;
   background-color: rgba(212, 212, 212, 0.375);
@@ -226,34 +235,61 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;
   backdrop-filter: blur(1px);
 }
-.pointer{
+
+.pointer {
   cursor: pointer;
 }
-.iconx{
+
+.iconx {
   font-size: 20px;
   color: #282828e4;
 }
-.iconx:hover{
+
+.iconx:hover {
   color: #000;
 }
-
-
-@media (min-width: 768px){
-  .nav{
+.border{
+  border: 1px solid #e0e0e0;
+}
+.round{
+  border-radius: 8px;
+}
+.padding{
+  padding: 8px;
+}
+.w90{
+  width: 90%;
+}
+.title{
+  font: 100;
+  font-size: 20px;
+  border-bottom: 1px solid;
+  width: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px;
+  color: #a3a3a3;
+}
+n{
+  color: red;
+}
+@media (min-width: 768px) {
+  .nav {
     width: 400px;
   }
-  #root{
+
+  #root {
     width: 400px;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
   }
-  body{
+
+  body {
     display: flex;
     justify-content: center;
     background-color: #eee;
   }
 }
-

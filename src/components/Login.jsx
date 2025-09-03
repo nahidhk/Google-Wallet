@@ -25,12 +25,14 @@ function Login() {
         <form onSubmit={handleLogin}>
           <h3>Login here</h3>
           <input
-            autoComplete="none"
+            autoComplete="off"
             className="input"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoFocus
+
           />
           <button type="submit" className="btn">Login</button>
         </form>
