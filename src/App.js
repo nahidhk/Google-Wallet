@@ -3,19 +3,29 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import Nav from "./components/Nav";
+import logid from "./data/logid.json";
+
+// pages
 import Login from "./components/Login";
 import Menu from "./components/Menu";
 import TData from "./components/TData";   
 import Earnings from "./components/Earnings"
+import Task from "./components/Task"
 
 
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
-  const logid = "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0";
-  const giveID = sessionStorage.getItem("ucCode0x");
+  const loginid = logid[0].id1+logid[0].id2;
+  const giveID = sessionStorage.getItem(logid[1].oxid);
 
-  if (giveID === logid) {
+  if (giveID === loginid) {
+    toast.success(`Successfuly Login.` ,{
+      position:"bottom-center",
+      autoClose:"1000"
+    })
     return (
       <Router>
           <Nav />
@@ -27,8 +37,12 @@ function App() {
           <Route path="/" element={<Menu />} />          
           <Route path="/TData" element={<TData />} />   
           <Route path="/earning" element={<Earnings />}/> 
+          <Route path="/task" element={<Task />} />
         </Routes>
+                <ToastContainer />
       </Router>
+
+
     );
   } else {
     return (

@@ -60,12 +60,12 @@ function Earnings() {
             credit: 0,
         };
 
-        // Update taskData
+        
         const updatedData = [...taskData, newTask];
         setTaskData(updatedData);
         localStorage.setItem("taskData", JSON.stringify(updatedData));
 
-        // Reset input fields if needed
+      
         setBasic(0);
         setOver(0);
 
@@ -73,12 +73,12 @@ function Earnings() {
 
         setTimeout(() => {
             callappo("/")
-        }, 2500);
+        }, 2000);
 
 
-        toast.success(`Data save success in localstroge`, {
-            position: "top-right",
-            autoClose: 2000, 
+        toast.success(`Earnings Data save success in localstroge`, {
+            position: "bottom-center",
+            autoClose: 1500, 
         });
 
     };

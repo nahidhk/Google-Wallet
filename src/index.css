@@ -278,11 +278,11 @@ n{
 }
 @media (min-width: 768px) {
   .nav {
-    width: 400px;
+    width: 500px;
   }
 
   #root {
-    width: 400px;
+    width: 500px;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
   }

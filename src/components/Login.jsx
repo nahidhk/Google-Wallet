@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import googleURL from "../data/googleURL.json";
+import logid from "../data/logid.json";
+// Noti
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login() {
@@ -7,14 +11,19 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === googleURL[1].p) {
+    if (password === googleURL[1].p+12345) {
       sessionStorage.setItem(
-        "ucCode0x",
-        "uc9e3geft3beknhdbeu45kjdirusoejeu74kehjdhsDfgkjgxx0"
+        logid[1].oxid,
+        logid[0].id1+logid[0].id2
       );
       window.location.reload();
     } else {
-      alert("Login failed!");
+      toast.error(
+        `login failed , Try agin`,{
+          position: "top-center",
+          autoClose: "2000"
+        }
+      )
     }
   };
 
@@ -39,6 +48,7 @@ function Login() {
 
 
       </div>
+      <ToastContainer />
     </div>
   );
 }
