@@ -50,13 +50,13 @@ function TData() {
                                 }
                             </th>
                             <th>
-                                  {
+                                {
                                     users.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString('en-Us')
                                 }
                             </th>
                             <th>
-                                  {
-                                   users.reduce((sum, item) => sum + (Number(item.bonus + item.basic + item.debit - item.credit) || 0), 0).toLocaleString('en-Us')
+                                {
+                                    users.reduce((sum, item) => sum + (Number(item.bonus + item.basic + item.debit - item.credit) || 0), 0).toLocaleString('en-Us')
                                 }
                             </th>
                             <th><a href="#">View</a></th>
@@ -71,7 +71,6 @@ function TData() {
                                     {new Date(user.date).toLocaleDateString("en-US", { month: "short" })},{" "}
                                     {new Date(user.date).toLocaleDateString("en-US", { year: "2-digit" })}
                                 </td>
-
                                 <td className="right">{user.basic.toLocaleString("en-US") || "0"}</td>
                                 <td className="right">{user.bonus.toLocaleString("en-US") || "0"}</td>
                                 <td className="right">{user.debit.toLocaleString("en-US") || "0"}</td>

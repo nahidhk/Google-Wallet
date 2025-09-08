@@ -9,8 +9,9 @@ import logid from "./data/logid.json";
 import Login from "./components/Login";
 import Menu from "./components/Menu";
 import TData from "./components/TData";   
-import Earnings from "./components/Earnings"
-import Task from "./components/Task"
+import Earnings from "./components/Earnings";
+import Task from "./components/Task";
+import Withdrawal from "./components/Withdrawal";
 
 
 import { ToastContainer, toast } from "react-toastify";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/TData" element={<TData />} />   
           <Route path="/earning" element={<Earnings />}/> 
           <Route path="/task" element={<Task />} />
+          <Route path="/withdrawal" element={<Withdrawal />} />
         </Routes>
                 <ToastContainer />
       </Router>
