@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Task() {
+    const [taskData, setTaskData] = useState([]);
 
-    const jsonsaveData = JSON.parse(localStorage.getItem("taskData") || "[]");
+    // LocalStorage থেকে ডেটা লোড
+    useEffect(() => {
+        const savedData = JSON.parse(localStorage.getItem("taskData") || "[]");
+        setTaskData(savedData);
+    }, []);
 
-    const totalBasicSum = jsonsaveData.reduce((sum, item) => sum + (Number(item.basic) || 0) , 0).toLocaleString("en-Us");
+    // Total হিসাব
+    const totalBasicSum = taskData
+        .reduce((sum, item) => sum + (Number(item.basic) || 0), 0)
+        .toLocaleString("en-US");
 
-    
+    // Delete function
+    const handleDelete = (index) => {
+        const updatedData = [...taskData];
+        updatedData.splice(index, 1); // index অনুযায়ী ডিলিট
+        setTaskData(updatedData);
+        localStorage.setItem("taskData", JSON.stringify(updatedData)); // LocalStorage আপডেট
+    };
 
     return (
         <div>
@@ -31,16 +45,20 @@ function Task() {
                         </tr>
                     </thead>
                     <tbody>
-                        {jsonsaveData.length > 0 ? (
-                            jsonsaveData.reverse().map((datax, index) => (
+                        {taskData.length > 0 ? (
+                            [...taskData].reverse().map((datax, index) => (
                                 <tr key={index}>
                                     <td>{datax.date}</td>
                                     <td>{datax.basic}</td>
                                     <td>{datax.over}</td>
                                     <td>{datax.debit}</td>
                                     <td>{datax.credit}</td>
-                                    <td>
-                                        <input checked type="checkbox" />
+                                    <td
+                                        className="textcenter pointer"
+                                        title="Delete"
+                                        onClick={() => handleDelete(taskData.length - 1 - index)} // reverse fix
+                                    >
+                                        <i className="fa-solid fa-trash red"></i>
                                     </td>
                                 </tr>
                             ))

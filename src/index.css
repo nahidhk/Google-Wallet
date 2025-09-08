@@ -276,6 +276,9 @@ td {
 n{
   color: red;
 }
+.red{
+  color: red;
+}
 @media (min-width: 768px) {
   .nav {
     width: 500px;
