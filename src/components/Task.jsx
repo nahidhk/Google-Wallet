@@ -3,23 +3,18 @@ import React, { useState, useEffect } from "react";
 function Task() {
     const [taskData, setTaskData] = useState([]);
 
-    // LocalStorage থেকে ডেটা লোড
     useEffect(() => {
         const savedData = JSON.parse(localStorage.getItem("taskData") || "[]");
         setTaskData(savedData);
     }, []);
 
-    // Total হিসাব
-    const totalBasicSum = taskData
-        .reduce((sum, item) => sum + (Number(item.basic) || 0), 0)
-        .toLocaleString("en-US");
+    //const totalBasicSum = taskData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
 
-    // Delete function
     const handleDelete = (index) => {
         const updatedData = [...taskData];
-        updatedData.splice(index, 1); // index অনুযায়ী ডিলিট
+        updatedData.splice(index, 1); 
         setTaskData(updatedData);
-        localStorage.setItem("taskData", JSON.stringify(updatedData)); // LocalStorage আপডেট
+        localStorage.setItem("taskData", JSON.stringify(updatedData)); 
     };
 
     return (
@@ -37,7 +32,7 @@ function Task() {
                         </tr>
                         <tr>
                             <th>Total</th>
-                            <th>{totalBasicSum}</th>
+                            <th>{"helllo"}</th>
                             <th></th>
                             <th></th>
                             <th></th>

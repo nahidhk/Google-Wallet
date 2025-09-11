@@ -3,11 +3,9 @@ import { useNavigate } from "react-router-dom";
 // Noti
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-// Date formate
-import DateFormate from "./script/DateFormate"
+
 
 function Earnings() {
-    const formatted = DateFormate;
     const callappo = useNavigate();
     const [basic, setBasic] = useState(0);
     const [over, setOver] = useState(0);
@@ -18,6 +16,9 @@ function Earnings() {
             setTaskData(savedData);
         }
     }, []);
+
+const formatted = new Date().toLocaleDateString();
+
     const indexData = (e) => {
         e.preventDefault();
         
@@ -30,7 +31,7 @@ function Earnings() {
         };      
         const updatedData = [...taskData, newTask];
         setTaskData(updatedData);
-        localStorage.setItem("taskData", JSON.stringify(<DateFormate/>));      
+        localStorage.setItem("taskData", JSON.stringify(newTask));      
         setBasic(0);
         setOver(0);
         setTimeout(() => {
