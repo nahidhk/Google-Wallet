@@ -4,44 +4,38 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function Earnings() {
     const callappo = useNavigate();
     const [basic, setBasic] = useState(0);
     const [over, setOver] = useState(0);
     const [taskData, setTaskData] = useState([]);
-    useEffect(() => {
-        const savedData = JSON.parse(localStorage.getItem("taskData"));
-        if (Array.isArray(savedData)) {
-            setTaskData(savedData);
-        }
-    }, []);
 
-const formatted = new Date().toLocaleDateString();
+    const loadIntData = localStorage.getItem("newTask");
+
+    const formatted = new Date().toLocaleDateString();
 
     const indexData = (e) => {
         e.preventDefault();
-        
+
         const newTask = {
             date: formatted,
             basic: Number(basic),
             over: Number(over),
             debit: 0,
             credit: 0,
-        };      
+        };
         const updatedData = [...taskData, newTask];
         setTaskData(updatedData);
-        localStorage.setItem("taskData", JSON.stringify(newTask));      
+        localStorage.setItem("taskData", JSON.stringify(newTask));
         setBasic(0);
         setOver(0);
         setTimeout(() => {
             callappo("/")
         }, 2000);
 
-
         toast.success(`Earnings Data save success in localstroge`, {
             position: "bottom-center",
-            autoClose: 1500, 
+            autoClose: 1500,
         });
 
     };
@@ -87,7 +81,7 @@ const formatted = new Date().toLocaleDateString();
                 </form>
             </div>
             <ToastContainer />
-        </div>   
+        </div>
     );
 }
 
