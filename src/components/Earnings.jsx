@@ -1,54 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// Noti
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import CallBOM from "./CallBOM";
 
 function Earnings() {
-    const callappo = useNavigate();
+    const navigate = useNavigate();
     const [basic, setBasic] = useState(0);
     const [over, setOver] = useState(0);
-    const [taskData, setTaskData] = useState([]);
 
-    const loadIntData = localStorage.getItem("newTask");
+
 
     const formatted = new Date().toLocaleDateString();
 
-    const indexData = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newTask = {
+        CallBOM({
             date: formatted,
             basic: Number(basic),
             over: Number(over),
             debit: 0,
             credit: 0,
-        };
-        const updatedData = [...taskData, newTask];
-        setTaskData(updatedData);
-        localStorage.setItem("taskData", JSON.stringify(newTask));
+        });
+
+
         setBasic(0);
         setOver(0);
-        setTimeout(() => {
-            callappo("/")
-        }, 2000);
 
-        toast.success(`Earnings Data save success in localstroge`, {
+        toast.success("Earnings Data saved successfully!", {
             position: "bottom-center",
             autoClose: 1500,
         });
 
+        setTimeout(() => {
+            navigate("/");
+        }, 2000);
     };
 
     return (
-
         <div className="flex center">
             <div className="flex center colum border round padding w90">
                 <span className="title">**Earnings**</span>
 
-                <form onSubmit={indexData}>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="basic">
-                        Basic<n>*</n>
+                        Basic<span className="n">*</span>
                     </label>
                     <input
                         type="number"
@@ -64,7 +61,7 @@ function Earnings() {
                     <br />
 
                     <label htmlFor="over">
-                        Over<n>*</n>
+                        Over<span className="n">*</span>
                     </label>
                     <input
                         type="number"
@@ -73,7 +70,7 @@ function Earnings() {
                         min="0"
                         name="over"
                         required
-                        autoFocus
+                        value={over}
                         onChange={(e) => setOver(e.target.value)}
                     />
 
