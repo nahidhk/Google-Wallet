@@ -40,7 +40,7 @@ function Menu() {
 
 
 
-                <div className="menubtn" onClick={() => navigate("/savings")}>
+                <div className="menubtn" onClick={() => navigate("/Savings")}>
                     <img className="icon" src={jarImg} alt="img" />
                     <span>
                         Savings

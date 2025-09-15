@@ -45,7 +45,7 @@ function Withdrawal() {
                         className="input"
                         placeholder="Input a Value!"
                         min="0"
-                        name="basic"
+                        name="wthdrawal"
                         required
                         value={wddara}
                         onChange={(e) => setwd(e.target.value)}
