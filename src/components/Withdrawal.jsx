@@ -8,11 +8,9 @@ function Withdrawal() {
     const navigate = useNavigate();
     const [wddara, setwd] = useState(0);
 
-    const formatted = new Date().toLocaleDateString();
     const handleSubmit = (e) => {
         e.preventDefault();
         CallBOM({
-            date: formatted,
             basic: 0,
             over: 0,
             debit: Number(wddara),
@@ -23,7 +21,7 @@ function Withdrawal() {
             autoClose: 1500,
         });
         setTimeout(() => {
-            navigate("/");
+            navigate("/task");
         }, 2000);
         setwd(0);
 

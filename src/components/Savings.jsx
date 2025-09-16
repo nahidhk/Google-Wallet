@@ -6,32 +6,33 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Savings() {
     const navigate = useNavigate();
-    const [savings, setsavefun] = useState(0);
+    const [savingt, setsavefun] = useState(0);
 
-    const formatted = new Date().toLocaleDateString();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         CallBOM({
-            date: formatted,
             basic: 0,
             over: 0,
             debit: 0,
-            credit: Number(savings),
+            credit: Number(savingt),
         });
         toast.success(" Withdrawal Data saved successfully!", {
             position: "bottom-center",
-            autoClose: 1500,
+            autoClose: 1000,
         });
         setTimeout(() => {
-            navigate("/");
-        }, 2000);
+            navigate("/task");
+        }, 1500);
         setsavefun(0);
 
     };
-    require(
+
+
+    return (
         <div className="flex center">
             <div className="flex center colum border padding w90">
-                <span className="titlt">
+                <span className="title">
                     **Savings**
                 </span>
                 <form onSubmit={handleSubmit}>
@@ -46,7 +47,7 @@ function Savings() {
                         min="0"
                         name="savings"
                         required
-                        value={savings}
+                        value={savingt}
                         onChange={(e) => setsavefun(e.target.value)}
                         autoFocus
                     />
@@ -59,3 +60,9 @@ function Savings() {
 }
 
 export default Savings;
+
+
+
+
+
+

@@ -11,13 +11,10 @@ function Earnings() {
 
 
 
-    const formatted = new Date().toLocaleDateString();
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
         CallBOM({
-            date: formatted,
             basic: Number(basic),
             over: Number(over),
             debit: 0,
@@ -34,7 +31,7 @@ function Earnings() {
         });
 
         setTimeout(() => {
-            navigate("/");
+            navigate("/task");
         }, 2000);
     };
 
@@ -71,6 +68,7 @@ function Earnings() {
                         name="over"
                         required
                         value={over}
+                        autoFocus
                         onChange={(e) => setOver(e.target.value)}
                     />
 
