@@ -290,6 +290,23 @@ td {
 .red {
   color: red;
 }
+.callbtn{
+  padding: 5px;
+  border: 1px solid #fff;
+  background-color: #4680ff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.heddin{
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 70px;
+  outline: none;
+}
 
 @media (min-width: 768px) {
   .nav {

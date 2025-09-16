@@ -8,14 +8,18 @@ function Task() {
         setTaskData(savedData);
     }, []);
 
-    //const totalBasicSum = taskData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
+    const totalBasicSum = taskData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
+    const totalOverSum = taskData.reduce((sum, item) => sum + (Number(item.over) || 0), 0).toLocaleString("en-US");
+    const totalDebitSum = taskData.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString("en-US");
+    const totalCreditSum = taskData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
 
     const handleDelete = (index) => {
         const updatedData = [...taskData];
-        updatedData.splice(index, 1); 
+        updatedData.splice(index, 1);
         setTaskData(updatedData);
-        localStorage.setItem("taskData", JSON.stringify(updatedData)); 
+        localStorage.setItem("taskData", JSON.stringify(updatedData));
     };
+
 
     return (
         <div>
@@ -32,11 +36,51 @@ function Task() {
                         </tr>
                         <tr>
                             <th>Total</th>
-                            <th>{"helllo"}</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>#</th>
+                            <th>
+                                <input
+                                    readOnly
+                                    type="text"
+                                    className="heddin"
+                                    value={totalBasicSum}
+                                    name="basic"
+                                    id="basic"
+                                />
+                            </th>
+                            <th>
+                                <input
+                                    readOnly
+                                    type="text"
+                                    className="heddin"
+                                    value={totalOverSum}
+                                    name="ovear"
+                                    id="ovear"
+                                />
+                            </th>
+                            <th>
+                                <input
+                                    readOnly
+                                    type="text"
+                                    className="heddin"
+                                    value={totalDebitSum}
+                                    name="ovear"
+                                    id="ovear"
+                                />
+                            </th>
+                            <th>
+                                <input
+                                    readOnly
+                                    type="text"
+                                    className="heddin"
+                                    value={totalCreditSum}
+                                    name="ovear"
+                                    id="ovear"
+                                />
+                            </th>
+                            <th>
+                                <button title="Click to Send Server" className="callbtn">
+                                    Confrom
+                                </button>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,10 +88,10 @@ function Task() {
                             [...taskData].reverse().map((datax, index) => (
                                 <tr key={index}>
                                     <td>{datax.date}</td>
-                                    <td>{datax.basic}</td>
-                                    <td>{datax.over}</td>
-                                    <td>{datax.debit}</td>
-                                    <td>{datax.credit}</td>
+                                    <td>{datax.basic.toLocaleString("en-US")}</td>
+                                    <td>{datax.over.toLocaleString("en-US")}</td>
+                                    <td>{datax.debit.toLocaleString("en-US")}</td>
+                                    <td>{datax.credit.toLocaleString("en-US")}</td>
                                     <td
                                         className="textcenter pointer"
                                         title="Delete"
@@ -59,7 +103,7 @@ function Task() {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="6">No data found</td>
+                                <td colSpan="6"><center>No Data Found !</center></td>
                             </tr>
                         )}
                     </tbody>
