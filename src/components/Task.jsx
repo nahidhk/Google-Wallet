@@ -2,16 +2,22 @@ import React, { useState, useEffect } from "react";
 
 function Task() {
     const [taskData, setTaskData] = useState([]);
+    const [filterDate, setFilterDate] = useState("");
 
     useEffect(() => {
         const savedData = JSON.parse(localStorage.getItem("taskData") || "[]");
         setTaskData(savedData);
     }, []);
 
-    const totalBasicSum = taskData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
-    const totalOverSum = taskData.reduce((sum, item) => sum + (Number(item.over) || 0), 0).toLocaleString("en-US");
-    const totalDebitSum = taskData.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString("en-US");
-    const totalCreditSum = taskData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
+    // Filter data by date
+    const filteredData = filterDate
+        ? taskData.filter(item => item.date === filterDate)
+        : taskData;
+
+    const totalBasicSum = filteredData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
+    const totalOverSum = filteredData.reduce((sum, item) => sum + (Number(item.over) || 0), 0).toLocaleString("en-US");
+    const totalDebitSum = filteredData.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString("en-US");
+    const totalCreditSum = filteredData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
 
     const handleDelete = (index) => {
         const updatedData = [...taskData];
@@ -20,10 +26,11 @@ function Task() {
         localStorage.setItem("taskData", JSON.stringify(updatedData));
     };
 
+    const today = new Date().toISOString().split('T')[0];
 
     return (
-        <div>
-            <div className="flex center scroll">
+        <div className="flex center ">
+            <div className="scroll">
                 <table className="unstyledTable">
                     <thead>
                         <tr>
@@ -35,67 +42,66 @@ function Task() {
                             <th>Status</th>
                         </tr>
                         <tr>
-                            <th>Total</th>
                             <th>
                                 <input
-                                    readOnly
+                                    type="date"
+                                    className="input"
+                                    value={filterDate || today}
+                                    onChange={(e) => setFilterDate(e.target.value)}
+                                />
+                            </th>
+                            <th>
+                                <input
                                     type="text"
                                     className="heddin"
                                     value={totalBasicSum}
-                                    name="basic"
-                                    id="basic"
+                                    readOnly
                                 />
                             </th>
                             <th>
                                 <input
-                                    readOnly
                                     type="text"
                                     className="heddin"
                                     value={totalOverSum}
-                                    name="ovear"
-                                    id="ovear"
+                                    readOnly
                                 />
                             </th>
                             <th>
                                 <input
-                                    readOnly
                                     type="text"
                                     className="heddin"
                                     value={totalDebitSum}
-                                    name="ovear"
-                                    id="ovear"
+                                    readOnly
                                 />
                             </th>
                             <th>
                                 <input
-                                    readOnly
                                     type="text"
                                     className="heddin"
                                     value={totalCreditSum}
-                                    name="ovear"
-                                    id="ovear"
+                                    readOnly
                                 />
                             </th>
                             <th>
                                 <button title="Click to Send Server" className="callbtn">
-                                    Confrom
+                                    Confirm
                                 </button>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {taskData.length > 0 ? (
-                            [...taskData].reverse().map((datax, index) => (
+                        {filteredData.length > 0 ? (
+                            [...filteredData].reverse().map((datax, index) => (
                                 <tr key={index}>
                                     <td>{datax.date}</td>
-                                    <td>{datax.basic.toLocaleString("en-US")}</td>
-                                    <td>{datax.over.toLocaleString("en-US")}</td>
-                                    <td>{datax.debit.toLocaleString("en-US")}</td>
-                                    <td>{datax.credit.toLocaleString("en-US")}</td>
+                                    <td>{Number(datax.basic).toLocaleString("en-US")}</td>
+                                    <td>{Number(datax.over).toLocaleString("en-US")}</td>
+                                    <td>{Number(datax.debit).toLocaleString("en-US")}</td>
+                                    <td>{Number(datax.credit).toLocaleString("en-US")}</td>
                                     <td
                                         className="textcenter pointer"
                                         title="Delete"
-                                        onClick={() => handleDelete(taskData.length - 1 - index)} // reverse fix
+                                        onClick={() => handleDelete(taskData.findIndex(d => d === datax))}
                                     >
                                         <i className="fa-solid fa-trash red"></i>
                                     </td>
