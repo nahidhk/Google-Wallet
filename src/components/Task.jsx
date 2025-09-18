@@ -8,10 +8,7 @@ function Task() {
         setTaskData(savedData);
     }, []);
 
-    const totalBasicSum = taskData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
-    const totalOverSum = taskData.reduce((sum, item) => sum + (Number(item.over) || 0), 0).toLocaleString("en-US");
-    const totalDebitSum = taskData.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString("en-US");
-    const totalCreditSum = taskData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
+
 
     const handleDelete = (index) => {
         const updatedData = [...taskData];
@@ -21,9 +18,24 @@ function Task() {
     };
 
     // const today = new Date().toISOString().split('T')[0];
+    const [filterDate, setFilterDate] = useState("all");
+
+    const filteredData =
+        filterDate && filterDate !== "all"
+            ? taskData.filter(item => item.date.split(" ")[0] === filterDate)
+            : taskData;
+
+    //  console.log(filteredData);
+
+
+    const totalBasicSum = filteredData.reduce((sum, item) => sum + (Number(item.basic) || 0), 0).toLocaleString("en-US");
+    const totalOverSum = filteredData.reduce((sum, item) => sum + (Number(item.over) || 0), 0).toLocaleString("en-US");
+    const totalDebitSum = filteredData.reduce((sum, item) => sum + (Number(item.debit) || 0), 0).toLocaleString("en-US");
+    const totalCreditSum = filteredData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
 
 
 
+ 
 
 
 
@@ -47,11 +59,11 @@ function Task() {
                                     id="date"
                                     className="input"
                                     autoFocus
-                                    // value={filterDate}
-                                    // onChange={(e) => setFilterDate(e.target.value)}
+                                    value={filterDate}
+                                    onChange={(e) => setFilterDate(e.target.value)}
                                 >
                                     <option value="all">All</option>
-                                    {[...new Set(taskData.map(item => item.date.split(" ")[0]))] // শুধু তারিখ নিলাম
+                                    {[...new Set(taskData.map(item => item.date.split(" ")[0]))]
                                         .reverse()
                                         .map((date, index) => (
                                             <option key={index} value={date}>
@@ -99,15 +111,21 @@ function Task() {
                                 />
                             </th>
                             <th>
-                                <button title="Click to Send Server" className="callbtn">
+                                <button
+                                onClick={() => backendCall({
+                                    cradit:totalCreditSum,
+                                    debit:totalDebitSum,
+                                    
+                                })}
+                                    title="Click to Send Server" className="callbtn">
                                     Confrom
                                 </button>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {taskData.length > 0 ? (
-                            [...taskData].reverse().map((datax, index) => (
+                        {filteredData.length > 0 ? (
+                            [...filteredData].reverse().map((datax, index) => (
                                 <tr key={index}>
                                     <td>{datax.date}</td>
                                     <td>{datax.basic.toLocaleString("en-US")}</td>
@@ -117,9 +135,8 @@ function Task() {
                                     <td
                                         className="textcenter pointer"
                                         title="Delete"
-                                        onClick={() => handleDelete(taskData.length - 1 - index)}
                                     >
-                                        <i className="fa-solid fa-trash red"></i>
+                                        <i onClick={() => handleDelete(taskData.length - 1 - index)} className="fa-solid fa-trash red"></i>
                                     </td>
                                 </tr>
                             ))
