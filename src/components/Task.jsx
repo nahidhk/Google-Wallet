@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Task() {
     const [taskData, setTaskData] = useState([]);
@@ -35,9 +37,36 @@ function Task() {
 
 
     const backendCall = async (data) => {
-        handleDeleteByDate(data.date);
-        alert(data.date)
+        if (filterDate === "all") {
+            toast.error("Do Not Select Date!", {
+                position: "top-center",
+                autoClose: 1500,
+            });
+        } else {
 
+            // handleDeleteByDate(filterDate);
+
+            try {
+                const response = await fetch("https://script.google.com/macros/s/AKfycbx5UjTn09gbyrWGMZaNqJN2XlNEeamC2kp-n_DdgwbPsTXoZx9VjCIx7tIFMLvcTvlO/exec", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json(); 
+                console.log("Success:", result);
+                alert("Data sent successfully!");
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to send data!");
+            }
+
+
+
+
+        }
     }
 
 
@@ -129,9 +158,10 @@ function Task() {
                             <th>
                                 <button
                                     onClick={() => backendCall({
+                                        date:filterDate,
                                         credit: totalCreditSum,
                                         debit: totalDebitSum,
-                                        over: totalOverSum,
+                                        bonus: totalOverSum,
                                         basic: totalBasicSum
                                     })}
                                     title="Click to Send Server" className="callbtn">
@@ -165,6 +195,7 @@ function Task() {
                     </tbody>
                 </table>
             </div>
+            <ToastContainer />
         </div>
     );
 }
