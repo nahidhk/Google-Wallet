@@ -34,8 +34,24 @@ function Task() {
     const totalCreditSum = filteredData.reduce((sum, item) => sum + (Number(item.credit) || 0), 0).toLocaleString("en-US");
 
 
+    const backendCall = async (data) => {
+        handleDeleteByDate(data.date);
+        alert(data.date)
 
- 
+    }
+
+
+    const handleDeleteByDate = (targetDate) => {
+
+        const updatedData = taskData.filter(
+            item => item.date.split(" ")[0] !== targetDate
+        );
+
+        setTaskData(updatedData);
+        localStorage.setItem("taskData", JSON.stringify(updatedData));
+    };
+
+
 
 
 
@@ -112,11 +128,12 @@ function Task() {
                             </th>
                             <th>
                                 <button
-                                onClick={() => backendCall({
-                                    cradit:totalCreditSum,
-                                    debit:totalDebitSum,
-                                    
-                                })}
+                                    onClick={() => backendCall({
+                                        credit: totalCreditSum,
+                                        debit: totalDebitSum,
+                                        over: totalOverSum,
+                                        basic: totalBasicSum
+                                    })}
                                     title="Click to Send Server" className="callbtn">
                                     Confrom
                                 </button>
